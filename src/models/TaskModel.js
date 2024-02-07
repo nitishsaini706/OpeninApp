@@ -11,6 +11,7 @@ const taskSchema = new mongoose.Schema({
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now },
     deleted_at: Date,
+    isDeleted: { type: Boolean, default: false }
 });
 
 const Task = mongoose.model('Task', taskSchema);

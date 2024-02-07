@@ -85,8 +85,8 @@ const deleteTask = async (req, res) => {
         // Soft delete by setting the deleted_at timestamp
         const deletedTask = await Task.findByIdAndUpdate(
             id,
-            { deleted_at: new Date() },
-            { new: true }
+            { deleted_at: new Date(),isDeleted:true },
+            
         );
 
         res.json(deletedTask);
